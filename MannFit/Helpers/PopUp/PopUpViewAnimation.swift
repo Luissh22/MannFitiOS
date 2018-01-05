@@ -6,7 +6,6 @@
 //  Copyright © 2018 MannFit Labs. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 enum AnimationDirection {
@@ -16,7 +15,7 @@ enum AnimationDirection {
 
 internal class PopUpViewAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
-    var to: UIViewController! // swiftlint:disable:this identifier_name
+    var to: UIViewController!
     var from: UIViewController!
     let inDuration: TimeInterval = 0.6
     let outDuration: TimeInterval = 0.2

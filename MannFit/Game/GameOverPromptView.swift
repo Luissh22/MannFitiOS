@@ -13,15 +13,7 @@ class GameOverPromptView: UIView {
     weak var delegate: GameOverPromptDelegate?
     private let buttonWidth: CGFloat = 100.0
     private let buttonFontSize: CGFloat = 25.0
-    
-    private lazy var background: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 30.0
-        view.backgroundColor = UIColor.gray
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+
     private lazy var restartButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.white
@@ -46,7 +38,11 @@ class GameOverPromptView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(self.background)
+        
+        self.layer.cornerRadius = 30.0
+        self.backgroundColor = UIColor.gray
+        self.translatesAutoresizingMaskIntoConstraints = false
+    
         self.addSubview(self.restartButton)
         self.addSubview(self.exitButton)
     }
@@ -58,32 +54,29 @@ class GameOverPromptView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let mainSreenWidth = self.bounds.size.width
-        let mainScreenHeight = self.bounds.size.height
+        let viewHeight: CGFloat = 200.0
         let horizontalPadding: CGFloat = 20.0
         
         let restartButtonSize: CGSize = restartButton.sizeThatFits(CGSize(width: 100.0, height: CGFloat.greatestFiniteMagnitude))
         let exitButtonSize: CGSize = exitButton.sizeThatFits(CGSize(width: 100.0, height: CGFloat.greatestFiniteMagnitude))
-
+        
         NSLayoutConstraint.activate([
-            self.background.widthAnchor.constraint(equalToConstant: mainSreenWidth - 50.0),
-            self.background.heightAnchor.constraint(equalToConstant: mainScreenHeight / 3),
-            self.background.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.background.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.widthAnchor.constraint(equalToConstant: self.bounds.width),
+            self.heightAnchor.constraint(equalToConstant: viewHeight)
             ])
     
         NSLayoutConstraint.activate([
             self.restartButton.widthAnchor.constraint(equalToConstant: buttonWidth),
             self.restartButton.heightAnchor.constraint(equalToConstant: restartButtonSize.height),
-            self.restartButton.centerXAnchor.constraint(equalTo: self.background.centerXAnchor, constant: buttonWidth / 2 + horizontalPadding),
-            self.restartButton.centerYAnchor.constraint(equalTo: self.background.centerYAnchor),
+            self.restartButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: buttonWidth / 2 + horizontalPadding),
+            self.restartButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             ])
         
         NSLayoutConstraint.activate([
             self.exitButton.widthAnchor.constraint(equalToConstant: buttonWidth),
             self.exitButton.heightAnchor.constraint(equalToConstant: exitButtonSize.height),
-            self.exitButton.centerXAnchor.constraint(equalTo: self.background.centerXAnchor, constant: -buttonWidth / 2 - horizontalPadding),
-            self.exitButton.centerYAnchor.constraint(equalTo: self.background.centerYAnchor),
+            self.exitButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -buttonWidth / 2 - horizontalPadding),
+            self.exitButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             ])
     }
     

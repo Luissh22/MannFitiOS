@@ -57,14 +57,16 @@ class GameCollectionViewController: UICollectionViewController {
         viewController.managedObjectContext = self.managedObjectContext
         
         // Hide the status bar
-        statusBarShouldBeHidden = true
-        UIView.animate(withDuration: 0.25) {
-            self.setNeedsStatusBarAppearanceUpdate()
-        }
+//        statusBarShouldBeHidden = true
+//        UIView.animate(withDuration: 0.25) {
+//            self.setNeedsStatusBarAppearanceUpdate()
+//        }
         
         // We know this is a GameViewController, so cast back
-        let gameViewController = viewController as! UIViewController
-        self.present(gameViewController, animated: true, completion: nil)
+        let popup = PopUpViewController(view: GameOverPromptView())
+        self.present(popup, animated: true, completion: nil)
+        //let gameViewController = viewController as! UIViewController
+        //self.present(gameViewController, animated: true, completion: nil)
     }
 }
 

@@ -12,7 +12,7 @@ class PopUpPresentationController: UIPresentationController {
     
     fileprivate lazy var overlay: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         view.alpha = 0.0
         return view
     }()
