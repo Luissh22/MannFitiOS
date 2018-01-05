@@ -11,9 +11,11 @@ import UIKit
 class PopUpViewController: UIViewController {
     
     var popUpView: UIView
+    var dismissible: Bool
     
-    init(view: UIView) {
+    init(view: UIView, dismissible: Bool) {
         self.popUpView = view
+        self.dismissible = dismissible
         super.init(nibName: nil, bundle: nil)
         self.transitioningDelegate = self
         self.modalPresentationStyle = .custom
@@ -25,6 +27,7 @@ class PopUpViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         self.popUpView = UIView()
+        self.dismissible = true
         self.popUpView.translatesAutoresizingMaskIntoConstraints = false
         super.init(coder: aDecoder)
     }
@@ -47,7 +50,7 @@ class PopUpViewController: UIViewController {
     @objc fileprivate func handleTap(_ sender: UITapGestureRecognizer) {
         var point = sender.location(in: self.view)
         point = self.popUpView.convert(point, from:self.view)
-        if !self.popUpView.bounds.contains(point) {
+        if !self.popUpView.bounds.contains(point) && dismissible {
             self.dismiss(animated: true, completion: nil)
         }
     }

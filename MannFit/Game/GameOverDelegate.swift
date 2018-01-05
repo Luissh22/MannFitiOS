@@ -9,6 +9,6 @@
 import Foundation
 
 protocol GameOverDelegate: NSObjectProtocol {
+    func presentPrompt() -> Void
     func sendGameData(game: String, duration: Int, absement: Float) -> Void
-    func exitGame() -> Void
 }

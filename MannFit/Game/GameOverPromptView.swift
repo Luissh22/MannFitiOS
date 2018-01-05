@@ -11,12 +11,13 @@ import UIKit
 class GameOverPromptView: UIView {
     
     weak var delegate: GameOverPromptDelegate?
-    private let buttonWidth: CGFloat = 100.0
+    private let buttonWidth: CGFloat = 120.0
     private let buttonFontSize: CGFloat = 25.0
 
     private lazy var restartButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.white
+        button.layer.cornerRadius = 10.0
         button.setTitle("RESTART", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextCondensed-Heavy", size: buttonFontSize)
         button.setTitleColor(.black, for: .normal)
@@ -28,6 +29,7 @@ class GameOverPromptView: UIView {
     private lazy var exitButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.white
+        button.layer.cornerRadius = 10.0
         button.setTitle("EXIT", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextCondensed-Heavy", size: buttonFontSize)
         button.setTitleColor(.black, for: .normal)
@@ -40,7 +42,7 @@ class GameOverPromptView: UIView {
         super.init(frame: frame)
         
         self.layer.cornerRadius = 30.0
-        self.backgroundColor = UIColor.gray
+        self.backgroundColor = UIColor.darkGray
         self.translatesAutoresizingMaskIntoConstraints = false
     
         self.addSubview(self.restartButton)

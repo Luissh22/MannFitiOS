@@ -15,8 +15,7 @@ class PacManGameScene: SKScene {
     
     private let motionManager = CMMotionManager()
     private let userDefaults: UserDefaults = UserDefaults.standard
-    private var engine: AudioEngine?
-    var gameOverPromptView: GameOverPromptView?
+    var engine: AudioEngine?
     weak var gameOverDelegate: GameOverDelegate?
     
     private var gameTimer: Timer?
@@ -260,29 +259,10 @@ class PacManGameScene: SKScene {
         if completed {
             self.gameOverDelegate?.sendGameData(game: "PacMan", duration: Int(exerciseTime), absement: Float(absementScore))
         }
-        let view = GameOverPromptView(frame: self.frame)
-        view.delegate = self
-        self.view?.addSubview(view)
-        self.gameOverPromptView = view
+        self.gameOverDelegate?.presentPrompt()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let pos = touch.location(in: self)
-            let node = self.atPoint(pos)
-            
-            if node == stopButton {
-                gameOver(completed: false)
-            }
-        }
-    }
-}
-
-// MARK: GameOverPromptDelegate
-extension PacManGameScene: GameOverPromptDelegate {
     func restartGame() {
-        gameOverPromptView?.removeFromSuperview()
-        
         timeLeft = self.exerciseTime
         timerSet = false
         timeLabel.text = String(Int(timeLeft))
@@ -306,8 +286,14 @@ extension PacManGameScene: GameOverPromptDelegate {
         gameActive = true
     }
     
-    func exitGame() {
-        self.engine?.stop()
-        self.gameOverDelegate?.exitGame()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let pos = touch.location(in: self)
+            let node = self.atPoint(pos)
+            
+            if node == stopButton {
+                gameOver(completed: false)
+            }
+        }
     }
 }
