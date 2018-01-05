@@ -21,5 +21,5 @@ extension WorkoutItem {
     @NSManaged public var workoutDuration: Int64
     @NSManaged public var date: Date
     @NSManaged public var game: String
-
+    @NSManaged public var formattedDate: String
 }

@@ -44,8 +44,19 @@ extension PacManGameViewController: GameOverDelegate {
         workoutItem.game = game
         workoutItem.workoutDuration = Int64(duration)
         workoutItem.absement = absement
-        workoutItem.date = Date()
+        
+        let date = Date()
+        workoutItem.date = date
+        workoutItem.formattedDate = self.format(date)
+        
         workoutItem.caloriesBurned = 0 // calculate this after
+    }
+    
+    private func format(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM yyyy"
+        
+        return dateFormatter.string(from: date)
     }
     
     func exitGame() {

@@ -19,7 +19,7 @@ class WorkoutHistoryViewController: UITableViewController {
         
         return NSFetchedResultsController(fetchRequest: fetchRequest,
                                           managedObjectContext: self.managedObjectContext,
-                                          sectionNameKeyPath: nil,
+                                          sectionNameKeyPath: #keyPath(WorkoutItem.formattedDate),
                                           cacheName: nil)
     }()
 
@@ -51,9 +51,28 @@ class WorkoutHistoryViewController: UITableViewController {
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        guard let sections = self.fetchedResultsController.sections else {
+            return 0
+        }
+        
+        return sections.count
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.fetchedResultsController.fetchedObjects?.count ?? 0
+        guard let sectionInfo = self.fetchedResultsController.sections?[section] else {
+            fatalError("Unexpected section")
+        }
+        
+        return sectionInfo.numberOfObjects
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let sectionInfo = self.fetchedResultsController.sections?[section] else {
+            fatalError("Unexpected section")
+        }
+        return sectionInfo.name
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
