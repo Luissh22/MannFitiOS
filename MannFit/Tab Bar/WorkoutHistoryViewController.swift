@@ -26,11 +26,12 @@ class WorkoutHistoryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
+        self.fetchedResultsController.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+        
         do {
             try self.fetchedResultsController.performFetch()
         } catch {
@@ -52,6 +53,19 @@ class WorkoutHistoryViewController: UITableViewController {
         return .lightContent
     }
 
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Grab item from fetched results controller and inform MOC to delete
+            let item = self.fetchedResultsController.object(at: indexPath)
+            self.managedObjectContext.delete(item)
+            self.managedObjectContext.saveChanges()
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.fetchedResultsController.fetchedObjects?.count ?? 0
     }
@@ -70,5 +84,15 @@ class WorkoutHistoryViewController: UITableViewController {
 // MARK: - CoreDataCompliant
 extension WorkoutHistoryViewController: CoreDataCompliant {
     
+}
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension WorkoutHistoryViewController: NSFetchedResultsControllerDelegate {
+    // When a change occurs in the MOC, update the table view
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        if type == .delete {
+            self.tableView.deleteRows(at: [indexPath!], with: .fade)
+        }
+    }
 }
 
