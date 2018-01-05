@@ -107,11 +107,25 @@ extension WorkoutHistoryViewController: CoreDataCompliant {
 
 // MARK: - NSFetchedResultsControllerDelegate
 extension WorkoutHistoryViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
     // When a change occurs in the MOC, update the table view
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         if type == .delete {
             self.tableView.deleteRows(at: [indexPath!], with: .fade)
         }
     }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        if type == .delete {
+            self.tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
+        }
+    }
 }
-
