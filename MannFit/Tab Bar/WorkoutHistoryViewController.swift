@@ -22,11 +22,37 @@ class WorkoutHistoryViewController: UITableViewController {
                                           sectionNameKeyPath: #keyPath(WorkoutItem.formattedDate),
                                           cacheName: nil)
     }()
+    
+    private lazy var headerBlurView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = CGRect(x: 15, y: -15, width: tableView.bounds.size.width, height: 55)
+        blurView.autoresizingMask = .flexibleWidth
+        
+        return blurView
+    }()
+    
+    private lazy var headerLabel: UILabel = {
+        let headerLabel = UILabel()
+        headerLabel.frame = headerBlurView.frame
+        headerLabel.autoresizingMask = .flexibleWidth
+        headerLabel.textColor = UIColor.white
+        headerLabel.font = UIFont.systemFont(ofSize: 20)
+        
+        return headerLabel
+    }()
 
+    private func setupNavigationBar() {
+        self.title = "Workouts"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         self.fetchedResultsController.delegate = self
+        self.setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +99,18 @@ class WorkoutHistoryViewController: UITableViewController {
             self.managedObjectContext.saveChanges()
         }
     }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sectionInfo = self.fetchedResultsController.sections?[section] else {
+            fatalError("Unexpected section")
+        }
+        
+        headerLabel.text = sectionInfo.name
+   
+        headerBlurView.contentView.addSubview(headerLabel)
+        
+        return headerBlurView
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sectionInfo = self.fetchedResultsController.sections?[section] else {
@@ -80,13 +118,6 @@ class WorkoutHistoryViewController: UITableViewController {
         }
         
         return sectionInfo.numberOfObjects
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sectionInfo = self.fetchedResultsController.sections?[section] else {
-            fatalError("Unexpected section")
-        }
-        return sectionInfo.name
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
