@@ -26,7 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
         // Iterate through tab bar view controllers and set the managed object context
         for case let vc as CoreDataCompliant in tabBarController.viewControllers! {
-           vc.managedObjectContext = CoreDataWrapper().managedObjectContext
+            vc.managedObjectContext = CoreDataWrapper().managedObjectContext
+        }
+        
+        // We can no longer pass the MOC directly because the history VC is embeded in a Nav controller
+        if let navVC = tabBarController.viewControllers![1] as? UINavigationController {
+            guard let historyVC = navVC.topViewController as? CoreDataCompliant else { return true }
+            historyVC.managedObjectContext = CoreDataWrapper().managedObjectContext
         }
         
         return true
