@@ -343,11 +343,11 @@
             </objects>
             <point key="canvasLocation" x="-136.80000000000001" y="1584.5577211394304"/>
         </scene>
-        <!--History-->
+        <!--Workouts-->
         <scene sceneID="FB1-xv-vg1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DXh-eq-HxR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="history-list" id="MY1-RH-aFc"/>
+                    <tabBarItem key="tabBarItem" title="Workouts" image="history-list" id="MY1-RH-aFc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K5g-2G-3AS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
