@@ -77,7 +77,6 @@ class WorkoutHistoryViewController: UITableViewController {
         guard let sectionInfo = self.fetchedResultsController.sections?[section] else {
             fatalError("Unexpected section")
         }
-        print(sectionInfo.name)
         
         let blurView = self.createBlurView()
         let headerLabel = self.createHeaderLabel(with: blurView.frame)
