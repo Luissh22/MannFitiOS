@@ -15,6 +15,7 @@
 		683840841FA7845000889E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683840821FA7845000889E75 /* LaunchScreen.storyboard */; };
 		68C8841C1FCC838C008D3FE6 /* requiem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68C8841B1FCC838C008D3FE6 /* requiem.mp3 */; };
 		68FE5CDD1FB0D82F00D2E6FA /* GameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE5CDC1FB0D82F00D2E6FA /* GameCollectionViewController.swift */; };
+		6E453710D588EBF5C04BBF3C /* Pods_MannFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4E1EFC07F0C694D099C760 /* Pods_MannFit.framework */; };
 		8B1CC4371FF424D000C6180F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CC4361FF424D000C6180F /* SettingsTableViewController.swift */; };
 		8B1EB876201BCD47008C6779 /* ExportDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EB875201BCD47008C6779 /* ExportDataDelegate.swift */; };
 		8B28E00B1FFD5DFA0059FE6F /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28E00A1FFD5DFA0059FE6F /* PopUpViewController.swift */; };
@@ -42,6 +43,8 @@
 		A0570D201FF41AB1001CAD79 /* LowPassFilterSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0570D1F1FF41AB1001CAD79 /* LowPassFilterSignal.swift */; };
 		A07C5D5B1FBF5AAB00A9A6F8 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C5D5A1FBF5AAB00A9A6F8 /* AudioEngine.swift */; };
 		A07C5D5D1FBF605200A9A6F8 /* BalancePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C5D5C1FBF605200A9A6F8 /* BalancePath.swift */; };
+		A09ABEE9203CA89500AF649E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09ABEE8203CA89500AF649E /* HistoryViewController.swift */; };
+		A09ABEEB203CA99D00AF649E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09ABEEA203CA99D00AF649E /* CalendarCell.swift */; };
 		A0B62FBE1FC73F180018151B /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B62FBD1FC73F180018151B /* CoreDataWrapper.swift */; };
 		A0B62FC11FC73FE50018151B /* MannFit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0B62FBF1FC73FE50018151B /* MannFit.xcdatamodeld */; };
 		A0B62FCC1FC742B50018151B /* WorkoutItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B62FCA1FC742B50018151B /* WorkoutItem+CoreDataClass.swift */; };
@@ -52,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23B27F448DAE4984FE43AE07 /* Pods-MannFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MannFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MannFit/Pods-MannFit.release.xcconfig"; sourceTree = "<group>"; };
+		64FC5197976AE1489ABB6EE7 /* Pods-MannFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MannFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MannFit/Pods-MannFit.debug.xcconfig"; sourceTree = "<group>"; };
 		683840701FA7844F00889E75 /* MannFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MannFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683840731FA7844F00889E75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		683840791FA7844F00889E75 /* PacManGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacManGameScene.swift; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		683840851FA7845000889E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68C8841B1FCC838C008D3FE6 /* requiem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = requiem.mp3; sourceTree = "<group>"; };
 		68FE5CDC1FB0D82F00D2E6FA /* GameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewController.swift; sourceTree = "<group>"; };
+		8A4E1EFC07F0C694D099C760 /* Pods_MannFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MannFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1CC4361FF424D000C6180F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8B1EB875201BCD47008C6779 /* ExportDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDataDelegate.swift; sourceTree = "<group>"; };
 		8B28E00A1FFD5DFA0059FE6F /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,8 @@
 		A0570D1F1FF41AB1001CAD79 /* LowPassFilterSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowPassFilterSignal.swift; sourceTree = "<group>"; };
 		A07C5D5A1FBF5AAB00A9A6F8 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		A07C5D5C1FBF605200A9A6F8 /* BalancePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePath.swift; sourceTree = "<group>"; };
+		A09ABEE8203CA89500AF649E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		A09ABEEA203CA99D00AF649E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		A0B62FBD1FC73F180018151B /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
 		A0B62FC01FC73FE50018151B /* MannFit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MannFit.xcdatamodel; sourceTree = "<group>"; };
 		A0B62FCA1FC742B50018151B /* WorkoutItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoutItem+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E453710D588EBF5C04BBF3C /* Pods_MannFit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +123,8 @@
 			children = (
 				683840721FA7844F00889E75 /* MannFit */,
 				683840711FA7844F00889E75 /* Products */,
+				858483105272E8EC381C2007 /* Pods */,
+				812E0A43702F113C1AD21DFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,8 +186,26 @@
 				68FE5CDC1FB0D82F00D2E6FA /* GameCollectionViewController.swift */,
 				8B1CC4361FF424D000C6180F /* SettingsTableViewController.swift */,
 				A0C0589A1FF5A265006169E6 /* WorkoutHistoryViewController.swift */,
+				A09ABEE8203CA89500AF649E /* HistoryViewController.swift */,
 			);
 			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		812E0A43702F113C1AD21DFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A4E1EFC07F0C694D099C760 /* Pods_MannFit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		858483105272E8EC381C2007 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64FC5197976AE1489ABB6EE7 /* Pods-MannFit.debug.xcconfig */,
+				23B27F448DAE4984FE43AE07 /* Pods-MannFit.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		8B2A1DD9201971E30031B7EE /* PacmanPath */ = {
@@ -237,6 +266,7 @@
 			children = (
 				A030F3241FB399D800658AA3 /* Game.swift */,
 				A030F3261FB3A5B400658AA3 /* GameMenuCell.swift */,
+				A09ABEEA203CA99D00AF649E /* CalendarCell.swift */,
 				A07C5D5A1FBF5AAB00A9A6F8 /* AudioEngine.swift */,
 			);
 			path = Model;
@@ -270,9 +300,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 683840881FA7845000889E75 /* Build configuration list for PBXNativeTarget "MannFit" */;
 			buildPhases = (
+				90A1FE72BDAF90178A6980F9 /* [CP] Check Pods Manifest.lock */,
 				6838406C1FA7844F00889E75 /* Sources */,
 				6838406D1FA7844F00889E75 /* Frameworks */,
 				6838406E1FA7844F00889E75 /* Resources */,
+				2BE90F41AC93F4C7FC8B49C0 /* [CP] Embed Pods Frameworks */,
+				1138B73DF3255C1F3796A7AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,6 +365,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1138B73DF3255C1F3796A7AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MannFit/Pods-MannFit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BE90F41AC93F4C7FC8B49C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MannFit/Pods-MannFit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MannFit/Pods-MannFit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90A1FE72BDAF90178A6980F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MannFit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6838406C1FA7844F00889E75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -372,7 +459,9 @@
 				8BD8E678200828DC00ED2BDF /* PreGamePromptView.swift in Sources */,
 				8B64AFB71FCB4D4A00C82833 /* GameOverPromptView.swift in Sources */,
 				A07C5D5D1FBF605200A9A6F8 /* BalancePath.swift in Sources */,
+				A09ABEE9203CA89500AF649E /* HistoryViewController.swift in Sources */,
 				8B2A1DDD201972270031B7EE /* TestingGameViewController.swift in Sources */,
+				A09ABEEB203CA99D00AF649E /* CalendarCell.swift in Sources */,
 				A0421F1C1FF6D5D200B44AC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,13 +597,14 @@
 		};
 		683840891FA7845000889E75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64FC5197976AE1489ABB6EE7 /* Pods-MannFit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = M64S8VZKPQ;
 				INFOPLIST_FILE = MannFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mannfitlabs.MannFitiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannfitlabs.MannFitiOSs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,13 +613,14 @@
 		};
 		6838408A1FA7845000889E75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23B27F448DAE4984FE43AE07 /* Pods-MannFit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = M64S8VZKPQ;
 				INFOPLIST_FILE = MannFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mannfitlabs.MannFitiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannfitlabs.MannFitiOSs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

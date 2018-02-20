@@ -1,0 +1,6 @@
+framework module Pods_MannFit {
+  umbrella header "Pods-MannFit-umbrella.h"
+
+  export *
+  module * { export * }
+}
