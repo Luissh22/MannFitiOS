@@ -5,6 +5,7 @@
 //  Created by Daniel Till on 12/29/17.
 //  Copyright © 2017 MannFit Labs. All rights reserved.
 //
+import UIKit
 
 struct UserDefaultsKeys {
     static let settingsMotionSensitivityKey = "settingsMotionSensitivityKey"
@@ -50,4 +51,9 @@ struct CoreData {
 struct Storyboard {
     static let WorkoutCell = "workoutCell"
     static let SegueWorkoutHistoryToDetail = "workoutHistoryToDetail"
+    static let CalendarCell = "CalendarCell"
+}
+
+struct Colours {
+    static let workoutBlue = #colorLiteral(red: 0.2784313725, green: 0.5882352941, blue: 1, alpha: 1)
 }

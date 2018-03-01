@@ -541,6 +541,19 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="149" height="98"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-eX-8yi">
+                                                            <rect key="frame" x="54" y="28.333333333333329" width="40" height="40"/>
+                                                            <color key="backgroundColor" red="0.27843137254901962" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="EVX-mx-IIq"/>
+                                                                <constraint firstAttribute="width" constant="40" id="go9-rl-gFz"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="20"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MU-rc-BAj">
                                                             <rect key="frame" x="53" y="39" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -550,11 +563,14 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstItem="zPc-eX-8yi" firstAttribute="centerY" secondItem="b6i-PK-4IN" secondAttribute="centerY" id="9nS-xe-6CT"/>
+                                                    <constraint firstItem="zPc-eX-8yi" firstAttribute="centerX" secondItem="b6i-PK-4IN" secondAttribute="centerX" id="Ak8-4h-ebN"/>
                                                     <constraint firstItem="3MU-rc-BAj" firstAttribute="centerY" secondItem="b6i-PK-4IN" secondAttribute="centerY" id="TVn-di-vAT"/>
                                                     <constraint firstItem="3MU-rc-BAj" firstAttribute="centerX" secondItem="b6i-PK-4IN" secondAttribute="centerX" id="wzd-dR-ZmA"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="3MU-rc-BAj" id="HS4-9i-OZh"/>
+                                                    <outlet property="selectedIndicator" destination="zPc-eX-8yi" id="lfC-N9-yYn"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -585,20 +601,38 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkV-9l-zLI" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="493.66666666666669" width="375" height="235.33333333333331"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Absement vs. Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmi-Xj-aC7">
+                                <rect key="frame" x="114.00000000000001" y="464" width="146.33333333333337" height="19.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="lkV-9l-zLI" firstAttribute="trailing" secondItem="KNx-75-x9V" secondAttribute="trailing" id="3Kr-pR-pvz"/>
+                            <constraint firstItem="gmi-Xj-aC7" firstAttribute="top" secondItem="lfO-8f-YdH" secondAttribute="bottom" constant="10" id="3aq-GZ-lbq"/>
+                            <constraint firstItem="lkV-9l-zLI" firstAttribute="top" secondItem="lfO-8f-YdH" secondAttribute="bottom" constant="40" id="BW6-FS-OEX"/>
+                            <constraint firstItem="lkV-9l-zLI" firstAttribute="leading" secondItem="KNx-75-x9V" secondAttribute="leading" id="FKg-AG-ncI"/>
                             <constraint firstItem="lfO-8f-YdH" firstAttribute="trailing" secondItem="KNx-75-x9V" secondAttribute="trailing" id="L0r-00-Mr3"/>
                             <constraint firstItem="lfO-8f-YdH" firstAttribute="top" secondItem="vzc-h9-rBT" secondAttribute="bottom" constant="10" id="R8z-zR-rbS"/>
                             <constraint firstItem="vzc-h9-rBT" firstAttribute="top" secondItem="KNx-75-x9V" secondAttribute="top" id="RDS-3m-2wU"/>
                             <constraint firstItem="lfO-8f-YdH" firstAttribute="leading" secondItem="KNx-75-x9V" secondAttribute="leading" id="UJh-4U-YcV"/>
+                            <constraint firstItem="lkV-9l-zLI" firstAttribute="bottom" secondItem="KNx-75-x9V" secondAttribute="bottom" id="Ujl-Ry-qeq"/>
                             <constraint firstItem="vzc-h9-rBT" firstAttribute="leading" secondItem="KNx-75-x9V" secondAttribute="leading" constant="10" id="exd-60-B3s"/>
+                            <constraint firstItem="lkV-9l-zLI" firstAttribute="top" secondItem="gmi-Xj-aC7" secondAttribute="bottom" constant="10" id="siy-Bc-4HK"/>
+                            <constraint firstItem="gmi-Xj-aC7" firstAttribute="centerX" secondItem="4ee-4j-6Dc" secondAttribute="centerX" id="vWu-xh-g1J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KNx-75-x9V"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" systemItem="history" id="Z3V-sc-A3G"/>
                     <connections>
+                        <outlet property="barChartView" destination="lkV-9l-zLI" id="JNh-HB-oIl"/>
                         <outlet property="calendarView" destination="CVv-GT-uGc" id="TPE-YX-E9x"/>
                         <outlet property="monthLabel" destination="Lmg-Fg-srL" id="GL9-Yr-GYd"/>
                         <outlet property="yearLabel" destination="XAQ-nJ-a2N" id="CYO-Zq-usQ"/>
@@ -606,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdX-ua-shq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584.79999999999995" y="1584.5577211394304"/>
+            <point key="canvasLocation" x="584.79999999999995" y="1584.2364532019706"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="FB1-xv-vg1">

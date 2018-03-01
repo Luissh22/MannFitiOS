@@ -11,4 +11,10 @@ import JTAppleCalendar
 
 class CalendarCell: JTAppleCell {
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var selectedIndicator: UIView!
+    var isWorkoutDate: Bool = false {
+        didSet {
+            dateLabel.textColor = isWorkoutDate ? Colours.workoutBlue : dateLabel.textColor
+        }
+    }
 }

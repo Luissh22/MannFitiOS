@@ -7,4 +7,5 @@ target 'MannFit' do
 
   # Pods for MannFit
   pod 'JTAppleCalendar'
+  pod 'Charts'
 end

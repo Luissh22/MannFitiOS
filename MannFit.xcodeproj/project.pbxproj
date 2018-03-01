@@ -47,6 +47,7 @@
 		A0570D201FF41AB1001CAD79 /* LowPassFilterSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0570D1F1FF41AB1001CAD79 /* LowPassFilterSignal.swift */; };
 		A07C5D5B1FBF5AAB00A9A6F8 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C5D5A1FBF5AAB00A9A6F8 /* AudioEngine.swift */; };
 		A07C5D5D1FBF605200A9A6F8 /* BalancePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C5D5C1FBF605200A9A6F8 /* BalancePath.swift */; };
+		A084634320475D44000C3FB7 /* AxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084634220475D44000C3FB7 /* AxisValueFormatter.swift */; };
 		A09ABEE9203CA89500AF649E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09ABEE8203CA89500AF649E /* HistoryViewController.swift */; };
 		A09ABEEB203CA99D00AF649E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09ABEEA203CA99D00AF649E /* CalendarCell.swift */; };
 		A0B62FBE1FC73F180018151B /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B62FBD1FC73F180018151B /* CoreDataWrapper.swift */; };
@@ -103,6 +104,7 @@
 		A0570D1F1FF41AB1001CAD79 /* LowPassFilterSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowPassFilterSignal.swift; sourceTree = "<group>"; };
 		A07C5D5A1FBF5AAB00A9A6F8 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		A07C5D5C1FBF605200A9A6F8 /* BalancePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePath.swift; sourceTree = "<group>"; };
+		A084634220475D44000C3FB7 /* AxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisValueFormatter.swift; sourceTree = "<group>"; };
 		A09ABEE8203CA89500AF649E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		A09ABEEA203CA99D00AF649E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		A0B62FBD1FC73F180018151B /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			children = (
 				A0B62FCF1FC7434C0018151B /* GameDataSource.swift */,
 				A01A0A691FF6C9A6005DAB37 /* WorkoutTableViewCell.swift */,
+				A084634220475D44000C3FB7 /* AxisValueFormatter.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -408,10 +411,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MannFit/Pods-MannFit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B73F94D203CA26C008DC3A8 /* WaterTapPreGamePromptView.swift in Sources */,
+				A084634320475D44000C3FB7 /* AxisValueFormatter.swift in Sources */,
 				6838407A1FA7844F00889E75 /* PacManGameScene.swift in Sources */,
 				A0B62FCC1FC742B50018151B /* WorkoutItem+CoreDataClass.swift in Sources */,
 				A07C5D5B1FBF5AAB00A9A6F8 /* AudioEngine.swift in Sources */,
