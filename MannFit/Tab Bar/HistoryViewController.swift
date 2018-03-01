@@ -28,8 +28,12 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         
         setupCalendarView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         fetchWorkoutData()
         setupBarChart()
+        calendarView.reloadData()
     }
     
     private func setupCalendarView() {
@@ -87,9 +91,6 @@ class HistoryViewController: UIViewController {
         guard let desiredData = get(workoutData, for: date) else { return nil }
         
         let yAxisValues = populateYAxis(with: desiredData)
-        
-        // Sum to see if we have any data
-        guard yAxisValues.reduce(0, +) > 0.0 else { return nil }
         
         var barChartData = [BarChartDataEntry]()
         for i in 0..<24 {
@@ -190,7 +191,7 @@ extension HistoryViewController: JTAppleCalendarViewDelegate {
         handleCellTextColor(view: cell, cellState: cellState)
         
         if let dates = workoutDates {
-            cell.isWorkoutDate = dates.contains(date)
+            cell.isWorkoutDate = dates.contains(date) && !cellState.isSelected
         }
         
         cell.selectedIndicator.isHidden = !cellState.isSelected
