@@ -239,7 +239,7 @@ class CircleBalanceGameScene: SKScene {
         gameActive = false
         self.engine?.stop()
         if completed {
-            self.gameOverDelegate?.sendGameData(game: "Circle Balance", duration: Int(exerciseTime), absement: Float(absementScore.rounded(toPlaces: 2)))
+            self.gameOverDelegate?.sendGameData(game: Workout.Circle.rawValue, duration: Int(exerciseTime), absement: Float(absementScore.rounded(toPlaces: 2)))
         }
         self.gameOverDelegate?.presentPrompt()
     }

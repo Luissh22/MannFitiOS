@@ -13,6 +13,8 @@ class WorkoutHistoryViewController: UITableViewController {
     
     var managedObjectContext: NSManagedObjectContext!
     
+    private let userDefaults: UserDefaults = UserDefaults.standard
+    
     private lazy var fetchedResultsController: NSFetchedResultsController<WorkoutItem> = {
         let fetchRequest: NSFetchRequest<WorkoutItem> = WorkoutItem.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
@@ -28,9 +30,28 @@ class WorkoutHistoryViewController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    fileprivate func filterWorkouts() {
+        if let storedFilter = getStoredWorkoutFilter() {
+            self.fetchedResultsController.fetchRequest.predicate = createPredicate(from: storedFilter)
+        }
+    }
+    
+    fileprivate func createPredicate(from workout: Workout) -> NSPredicate? {
+        return (workout == .All) ? nil : NSPredicate(format: "game = %@", workout.rawValue)
+    }
+    
+    fileprivate func getStoredWorkoutFilter() -> Workout? {
+        guard let storedString = userDefaults.value(forKey: UserDefaultsKeys.filteredWorkoutKey) as? String else {
+            return nil
+        }
+        
+        return Workout(rawValue: storedString)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
+        self.navigationController?.delegate = self
         self.fetchedResultsController.delegate = self
         self.setupNavigationBar()
     }
@@ -39,6 +60,7 @@ class WorkoutHistoryViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         do {
+            filterWorkouts()
             try self.fetchedResultsController.performFetch()
         } catch {
             // TODO: Handle the error cleanly
@@ -141,6 +163,11 @@ class WorkoutHistoryViewController: UITableViewController {
             destinationVC.date = item.date
             destinationVC.duration = item.workoutDuration
             destinationVC.workoutGameImage = item.gameImage
+        } else if segue.identifier == Storyboard.SegueFilterWorkouts {
+            let destinationVC = segue.destination as! FilterWorkoutTableViewController
+            destinationVC.delegate = self
+            destinationVC.storedWorkoutFilter = getStoredWorkoutFilter()
+            
         }
     }
 }
@@ -172,5 +199,21 @@ extension WorkoutHistoryViewController: NSFetchedResultsControllerDelegate {
         if type == .delete {
             self.tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
         }
+    }
+}
+
+// MARK: - FilterWorkoutsDelegate
+extension WorkoutHistoryViewController: FilterWorkoutsDelegate {
+    func didSelect(_ workout: Workout) {
+        userDefaults.set(workout.rawValue, forKey: UserDefaultsKeys.filteredWorkoutKey)
+        self.fetchedResultsController.fetchRequest.predicate = createPredicate(from: workout)
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+extension WorkoutHistoryViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        self.navigationController?.navigationBar.tintAdjustmentMode = .normal
+        self.viewWillAppear(true)
     }
 }

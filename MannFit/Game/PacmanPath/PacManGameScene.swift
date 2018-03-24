@@ -281,7 +281,7 @@ class PacManGameScene: SKScene, GameTimeCompliant {
         self.engine?.stop()
         player.removeAction(forKey: pacmanAnimationKey)
         if completed {
-            self.gameOverDelegate?.sendGameData(game: "PacMan", duration: Int(inputTime), absement: Float(absementScore.rounded(toPlaces: 2)))
+            self.gameOverDelegate?.sendGameData(game: Workout.PacMan.rawValue, duration: Int(inputTime), absement: Float(absementScore.rounded(toPlaces: 2)))
         }
         self.gameOverDelegate?.presentPrompt()
     }

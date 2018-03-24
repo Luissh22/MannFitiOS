@@ -346,7 +346,7 @@ class PongGameScene: SKScene {
         gameActive = false
         self.engine?.stop()
         if completed {
-            self.gameOverDelegate?.sendGameData(game: "Pong", duration: Int(exerciseTime), absement: Float(absementScore.rounded(toPlaces: 2)))
+            self.gameOverDelegate?.sendGameData(game: Workout.Pong.rawValue, duration: Int(exerciseTime), absement: Float(absementScore.rounded(toPlaces: 2)))
         }
         self.gameOverDelegate?.presentPrompt()
     }

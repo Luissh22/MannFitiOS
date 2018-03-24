@@ -61,6 +61,9 @@
 		A0B62FD01FC7434C0018151B /* GameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B62FCF1FC7434C0018151B /* GameDataSource.swift */; };
 		A0B666471FBE1A2600A125FD /* pacman_beginning.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0B666461FBE1A2600A125FD /* pacman_beginning.wav */; };
 		A0C0589B1FF5A265006169E6 /* WorkoutHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0589A1FF5A265006169E6 /* WorkoutHistoryViewController.swift */; };
+		A0ED3F832066D5E3009494D1 /* FilterWorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ED3F822066D5E3009494D1 /* FilterWorkoutTableViewCell.swift */; };
+		A0ED3F852066D5F7009494D1 /* FilterWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ED3F842066D5F7009494D1 /* FilterWorkoutTableViewController.swift */; };
+		A0ED3F872066D66F009494D1 /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ED3F862066D66F009494D1 /* Workouts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +125,9 @@
 		A0B62FCF1FC7434C0018151B /* GameDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataSource.swift; sourceTree = "<group>"; };
 		A0B666461FBE1A2600A125FD /* pacman_beginning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pacman_beginning.wav; sourceTree = "<group>"; };
 		A0C0589A1FF5A265006169E6 /* WorkoutHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryViewController.swift; sourceTree = "<group>"; };
+		A0ED3F822066D5E3009494D1 /* FilterWorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterWorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		A0ED3F842066D5F7009494D1 /* FilterWorkoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterWorkoutTableViewController.swift; sourceTree = "<group>"; };
+		A0ED3F862066D66F009494D1 /* Workouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workouts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,7 @@
 				A0C0589A1FF5A265006169E6 /* WorkoutHistoryViewController.swift */,
 				A031461C2040C43F00EAD098 /* WorkoutDetailViewController.swift */,
 				A09ABEE8203CA89500AF649E /* HistoryViewController.swift */,
+				A0ED3F842066D5F7009494D1 /* FilterWorkoutTableViewController.swift */,
 			);
 			path = "Tab Bar";
 			sourceTree = "<group>";
@@ -332,6 +339,8 @@
 				A0B62FCF1FC7434C0018151B /* GameDataSource.swift */,
 				A01A0A691FF6C9A6005DAB37 /* WorkoutTableViewCell.swift */,
 				A084634220475D44000C3FB7 /* AxisValueFormatter.swift */,
+				A0ED3F822066D5E3009494D1 /* FilterWorkoutTableViewCell.swift */,
+				A0ED3F862066D66F009494D1 /* Workouts.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -480,6 +489,7 @@
 				A030C8CB1FC75B97006F591D /* GameOverDelegate.swift in Sources */,
 				8B2A1DE1201979540031B7EE /* TestingPreGamePromptView.swift in Sources */,
 				8B5D64A71FD2172E009A97E0 /* GameOverPromptDelegate.swift in Sources */,
+				A0ED3F872066D66F009494D1 /* Workouts.swift in Sources */,
 				8B28E00B1FFD5DFA0059FE6F /* PopUpViewController.swift in Sources */,
 				A0B62FD01FC7434C0018151B /* GameDataSource.swift in Sources */,
 				8BD93774202397080056DEEA /* CircleBalanceGameScene.swift in Sources */,
@@ -490,6 +500,7 @@
 				A0B62FC11FC73FE50018151B /* MannFit.xcdatamodeld in Sources */,
 				A030F3251FB399D800658AA3 /* Game.swift in Sources */,
 				A030F3271FB3A5B400658AA3 /* GameMenuCell.swift in Sources */,
+				A0ED3F832066D5E3009494D1 /* FilterWorkoutTableViewCell.swift in Sources */,
 				6838407C1FA7844F00889E75 /* PacManGameViewController.swift in Sources */,
 				A0B62FCD1FC742B50018151B /* WorkoutItem+CoreDataProperties.swift in Sources */,
 				8BE8663E205221C900DC32E4 /* UIDevice+Sizes.swift in Sources */,
@@ -509,6 +520,7 @@
 				A031461D2040C43F00EAD098 /* WorkoutDetailViewController.swift in Sources */,
 				A030C8CD1FC763E3006F591D /* CoreDataCompliant.swift in Sources */,
 				8BD8E678200828DC00ED2BDF /* PreGamePromptView.swift in Sources */,
+				A0ED3F852066D5F7009494D1 /* FilterWorkoutTableViewController.swift in Sources */,
 				8B38553C20545A3000EFD228 /* PongPreGamePromptView.swift in Sources */,
 				8B38553A20545A3000EFD228 /* PongGameScene.swift in Sources */,
 				8B64AFB71FCB4D4A00C82833 /* GameOverPromptView.swift in Sources */,

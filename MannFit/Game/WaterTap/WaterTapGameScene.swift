@@ -244,7 +244,7 @@ class WaterTapGameScene: SKScene {
         water.removeFromParent()
         self.engine?.stop()
         if completed {
-            self.gameOverDelegate?.sendGameData(game: "Water Tap", duration: Int(exerciseTime), absement: Float(absementScore.rounded(toPlaces: 2)))
+            self.gameOverDelegate?.sendGameData(game: Workout.Water.rawValue, duration: Int(exerciseTime), absement: Float(absementScore.rounded(toPlaces: 2)))
         }
         self.gameOverDelegate?.presentPrompt()
     }
