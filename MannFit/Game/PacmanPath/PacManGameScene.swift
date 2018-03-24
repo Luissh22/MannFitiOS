@@ -270,6 +270,7 @@ class PacManGameScene: SKScene, GameTimeCompliant {
             }
             updateAbsement(Double(xDifference))
             self.engine?.modifyPitch(with: -Float(xDifference * 2))
+            self.engine?.modifyPlaybackRate(with: Float(1 - (self.absement * 2)))
         }
     }
     

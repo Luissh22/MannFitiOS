@@ -227,6 +227,7 @@ class CircleBalanceGameScene: SKScene {
             if absement >= 0 {
                 updateAbsement(Double(absement))
                 self.engine?.modifyPitch(with: -Float(absement * 2))
+                self.engine?.modifyPlaybackRate(with: Float(1 - (self.absement * 2)))
             }
         }
     }

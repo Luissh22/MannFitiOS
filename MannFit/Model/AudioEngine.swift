@@ -39,7 +39,7 @@ class AudioEngine {
         
         self.audioPlayerNode.scheduleBuffer(self.audioBuffer, at: nil, options: self.bufferOptions, completionHandler: nil)
         self.audioPlayerNode.volume = userDefaults.float(forKey: UserDefaultsKeys.settingsVolumeKey)
-
+    
         do {
             try self.engine.start()
             self.audioPlayerNode.play()
@@ -61,6 +61,11 @@ class AudioEngine {
     
     func modifyPitch(with value: Float) {
         self.unitTimePitch.pitch = value
+        self.audioPlayerNode.scheduleBuffer(self.audioBuffer, at: nil, options: self.bufferOptions, completionHandler: nil)
+    }
+    
+    func modifyPlaybackRate(with rate: Float) {
+        self.unitTimePitch.rate = rate
         self.audioPlayerNode.scheduleBuffer(self.audioBuffer, at: nil, options: self.bufferOptions, completionHandler: nil)
     }
     

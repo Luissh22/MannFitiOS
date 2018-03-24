@@ -271,6 +271,7 @@ class PongGameScene: SKScene {
             let xDifference = abs(playerPaddle.position.x - ball.position.x)
             updateAbsement(Double(xDifference))
             self.engine?.modifyPitch(with: -Float(xDifference * 2))
+            self.engine?.modifyPlaybackRate(with: Float(1 - (self.absement * 2)))
         }
         
         // handle ball below player paddle
