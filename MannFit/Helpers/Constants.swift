@@ -12,6 +12,10 @@ struct UserDefaultsKeys {
     static let settingsMusicKey = "settingsMusicKey"
     static let settingsVolumeKey = "settingsVolumeKey"
     static let filteredWorkoutKey = "filteredWorkoutKey"
+    static let pacmanHighScoreKey = "pacmanHighScoreKey"
+    static let circleHighScoreKey = "circleHighScoreKey"
+    static let waterHighScoreKey = "waterHighScoreKey"
+    static let pongHighScoreKey = "pongHighScoreKey"
 }
 
 struct SettingsValues {

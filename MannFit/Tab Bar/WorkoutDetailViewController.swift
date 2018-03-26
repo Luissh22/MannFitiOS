@@ -16,12 +16,14 @@ class WorkoutDetailViewController: UIViewController {
     @IBOutlet weak var absementScoreLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var workoutTimeLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
     
     var workoutName: String!
     var absementScore: String!
     var date: Date!
     var duration: Int64!
     var workoutGameImage: UIImage?
+    var highScore: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class WorkoutDetailViewController: UIViewController {
         workoutImageView.image = workoutGameImage
         workoutNameLabel.text = workoutName
         absementScoreLabel.text = absementScore
+        highScoreLabel.text = highScore
         durationLabel.text = String(format: "%ds", duration)
         
         let dateFormatter = DateFormatter()

@@ -14,6 +14,7 @@ class PongGameViewController: UIViewController, CoreDataCompliant, GameTimeCompl
     
     var managedObjectContext: NSManagedObjectContext!
     var inputTime: TimeInterval = GameData.circleDefaultTime
+    let defaults = UserDefaults.standard
     private var scene: PongGameScene?
     
     override func viewDidLoad() {
@@ -65,6 +66,7 @@ extension PongGameViewController: GameOverDelegate {
     }
     
     func sendGameData(game: String, duration: Int, absement: Float) {
+        self.saveHighScore(absement)
         self.prepareItem(game: game, duration: duration, absement: absement)
         self.managedObjectContext.saveChanges()
     }
@@ -76,5 +78,16 @@ extension PongGameViewController: GameOverDelegate {
         workoutItem.absement = absement
         workoutItem.date = Date()
         workoutItem.caloriesBurned = 0 // calculate this after
+    }
+    
+    private func saveHighScore(_ absement: Float) {
+        guard let oldhighScore = defaults.object(forKey: UserDefaultsKeys.pongHighScoreKey) as? Float else {
+            defaults.set(absement, forKey: UserDefaultsKeys.pongHighScoreKey)
+            return
+        }
+        
+        if absement < oldhighScore {
+            defaults.set(absement, forKey: UserDefaultsKeys.pongHighScoreKey)
+        }
     }
 }

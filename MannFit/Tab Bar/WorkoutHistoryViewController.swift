@@ -163,12 +163,22 @@ class WorkoutHistoryViewController: UITableViewController {
             destinationVC.date = item.date
             destinationVC.duration = item.workoutDuration
             destinationVC.workoutGameImage = item.gameImage
+            destinationVC.highScore = getHighScore(for: item.game) ?? item.formattedAbsementScore
         } else if segue.identifier == Storyboard.SegueFilterWorkouts {
             let destinationVC = segue.destination as! FilterWorkoutTableViewController
             destinationVC.delegate = self
             destinationVC.storedWorkoutFilter = getStoredWorkoutFilter()
             
         }
+    }
+    
+    private func getHighScore(for game: String) -> String? {
+        guard let workout = Workout(rawValue: game),
+            let highScoreKey = workout.highScoreKey,
+            let highScore = userDefaults.object(forKey: highScoreKey) as? Float
+        else { return nil }
+        
+        return String(format: "%.2f", highScore)
     }
 }
 
