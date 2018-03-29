@@ -487,22 +487,45 @@
                                 <color key="textColor" red="0.48384876943005184" green="0.48384876943005184" blue="0.48384876943005184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I34-DH-UFl" userLabel="High Score Stack View">
-                                <rect key="frame" x="60.000000000000007" y="477.33333333333331" width="84.666666666666686" height="72.333333333333314"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8AI-fM-tcG">
+                                <rect key="frame" x="20" y="472.33333333333331" width="335" height="72.333333333333314"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-d0-lX0">
-                                        <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="20.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ov-Uh-wY3">
-                                        <rect key="frame" x="5.3333333333333286" y="30.333333333333371" width="74" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I34-DH-UFl" userLabel="High Score Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="72.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-d0-lX0">
+                                                <rect key="frame" x="41.333333333333336" y="0.0" width="84.666666666666657" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="20.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ov-Uh-wY3">
+                                                <rect key="frame" x="46.666666666666671" y="30.333333333333371" width="74" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="reY-fj-3dO" userLabel="Improvement Stack View">
+                                        <rect key="frame" x="167.66666666666663" y="0.0" width="167.33333333333337" height="72.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Improvement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5g-I3-DOE" userLabel="Improvement">
+                                                <rect key="frame" x="33.33333333333335" y="0.0" width="100.66666666666669" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="1.04%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-bx-YkT">
+                                                <rect key="frame" x="34.333333333333336" y="30.333333333333371" width="98.333333333333314" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                                <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72.329999999999998" id="Kg6-cc-Loc"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -512,8 +535,9 @@
                             <constraint firstItem="cIJ-vm-vEQ" firstAttribute="top" secondItem="kFY-14-d5p" secondAttribute="bottom" constant="10" id="5r5-0y-58C"/>
                             <constraint firstItem="kFY-14-d5p" firstAttribute="top" secondItem="9rp-O7-Fmg" secondAttribute="top" constant="20" id="8Zt-su-cRe"/>
                             <constraint firstItem="EEJ-Bs-bSn" firstAttribute="top" secondItem="cIJ-vm-vEQ" secondAttribute="bottom" constant="35" id="aYI-5d-OjF"/>
-                            <constraint firstItem="I34-DH-UFl" firstAttribute="leading" secondItem="9rp-O7-Fmg" secondAttribute="leading" constant="60" id="fOM-ER-oc2"/>
-                            <constraint firstItem="I34-DH-UFl" firstAttribute="top" secondItem="EEJ-Bs-bSn" secondAttribute="bottom" constant="40" id="g9d-Tr-9xU"/>
+                            <constraint firstItem="8AI-fM-tcG" firstAttribute="top" secondItem="EEJ-Bs-bSn" secondAttribute="bottom" constant="35" id="ews-CE-egG"/>
+                            <constraint firstItem="9rp-O7-Fmg" firstAttribute="trailing" secondItem="8AI-fM-tcG" secondAttribute="trailing" constant="20" id="iMj-pZ-PAw"/>
+                            <constraint firstItem="8AI-fM-tcG" firstAttribute="leading" secondItem="9rp-O7-Fmg" secondAttribute="leading" constant="20" id="j1G-om-uvT"/>
                             <constraint firstItem="EEJ-Bs-bSn" firstAttribute="centerX" secondItem="QLe-bl-IqA" secondAttribute="centerX" id="nph-Kz-dl8"/>
                             <constraint firstItem="kFY-14-d5p" firstAttribute="centerX" secondItem="QLe-bl-IqA" secondAttribute="centerX" id="raF-6t-TgK"/>
                             <constraint firstItem="EEJ-Bs-bSn" firstAttribute="leading" secondItem="9rp-O7-Fmg" secondAttribute="leading" constant="20" id="s6g-ai-aA3"/>
@@ -525,6 +549,7 @@
                         <outlet property="absementScoreLabel" destination="Cxe-Xs-5dL" id="3qL-mV-rUM"/>
                         <outlet property="durationLabel" destination="nrk-V9-RFc" id="J1b-uP-aTr"/>
                         <outlet property="highScoreLabel" destination="3Ov-Uh-wY3" id="Vr6-Cv-3dX"/>
+                        <outlet property="improvementLabel" destination="y7N-bx-YkT" id="kEf-T0-ZQ2"/>
                         <outlet property="workoutImageView" destination="Fik-jT-u7G" id="bPX-Nw-T5l"/>
                         <outlet property="workoutNameLabel" destination="bdp-o7-D7T" id="8dk-HO-2c5"/>
                         <outlet property="workoutTimeLabel" destination="cIJ-vm-vEQ" id="mif-SO-Q4y"/>
