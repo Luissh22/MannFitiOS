@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaultsKeys.settingsMotionSensitivityKey : 0.5,
             UserDefaultsKeys.settingsMusicKey : true,
             UserDefaultsKeys.settingsVolumeKey : 1.0,
+            UserDefaultsKeys.settingsPongSpeedKey : 1.0
             ])
         
         let tabBarController = self.window?.rootViewController as! UITabBarController

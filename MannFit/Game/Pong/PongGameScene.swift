@@ -20,6 +20,7 @@ class PongGameScene: SKScene {
     private var gameTimer: Timer?
     private var gameActive: Bool = false
     var inputTime: TimeInterval = GameData.pacmanDefaultTime
+    var inputApparatus: ApparatusType = .PlankBoard
     private lazy var exerciseTime: TimeInterval = {
         return inputTime
     }()
@@ -258,7 +259,14 @@ class PongGameScene: SKScene {
         
         // motion update
         if let data = motionManager.accelerometerData {
-            self.smoothXAcceleration.update(newValue: data.acceleration.x)
+            var dataValue: Double = 0.0
+            switch inputApparatus {
+            case .PlankBoard:
+                dataValue = data.acceleration.x
+            case .PullUpBar:
+                dataValue = data.acceleration.y
+            }
+            self.smoothXAcceleration.update(newValue: dataValue)
             let sensitivity = 2.0 * (userDefaults.float(forKey: UserDefaultsKeys.settingsMotionSensitivityKey) / SettingsValues.sensitivityDefault)
             playerPaddle.position.x = CGFloat(smoothXAcceleration.value - playerCenterX) * frame.width / 2 * CGFloat(sensitivity) + frame.width / 2
         }
@@ -308,7 +316,8 @@ class PongGameScene: SKScene {
             gameActive = true
             gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateGameTimer), userInfo: nil, repeats: true)
             timerSet = true
-            ball.physicsBody?.applyImpulse(CGVector(dx: 2, dy: -2))
+            let speed = CGFloat(userDefaults.float(forKey: UserDefaultsKeys.settingsPongSpeedKey))
+            ball.physicsBody?.applyImpulse(CGVector(dx: speed, dy: -speed))
         }
     }
     

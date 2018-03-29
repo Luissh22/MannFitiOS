@@ -255,6 +255,36 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="88" id="2AP-na-Skh">
+                                        <rect key="frame" x="0.0" y="281.33333333333337" width="375" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2AP-na-Skh" id="50i-25-due">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pong Ball Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeO-QC-ncd">
+                                                    <rect key="frame" x="116.66666666666669" y="11" width="142" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="Z6T-y0-rvh">
+                                                    <rect key="frame" x="14" y="43" width="347" height="31"/>
+                                                    <connections>
+                                                        <action selector="pongSpeedSlider:" destination="bHz-dz-i8y" eventType="valueChanged" id="bQG-p2-fye"/>
+                                                    </connections>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oeO-QC-ncd" firstAttribute="centerX" secondItem="50i-25-due" secondAttribute="centerX" id="1Jz-aK-vDP"/>
+                                                <constraint firstItem="oeO-QC-ncd" firstAttribute="top" secondItem="50i-25-due" secondAttribute="topMargin" id="5hj-4o-cKA"/>
+                                                <constraint firstItem="Z6T-y0-rvh" firstAttribute="trailing" secondItem="50i-25-due" secondAttribute="trailingMargin" id="Jhh-Fl-ipM"/>
+                                                <constraint firstItem="Z6T-y0-rvh" firstAttribute="leading" secondItem="50i-25-due" secondAttribute="leadingMargin" id="mYV-eT-N1b"/>
+                                                <constraint firstItem="Z6T-y0-rvh" firstAttribute="top" secondItem="oeO-QC-ncd" secondAttribute="bottom" constant="8" id="zdW-RS-Ldv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -266,6 +296,7 @@
                     <tabBarItem key="tabBarItem" title="" systemItem="more" id="rUo-zj-i0X"/>
                     <connections>
                         <outlet property="musicSwitch" destination="7Cw-3W-RbU" id="ekB-s5-wKd"/>
+                        <outlet property="pongSpeedSlider" destination="Z6T-y0-rvh" id="yKD-E7-wSh"/>
                         <outlet property="sensitivitySlider" destination="Pjm-N3-XNQ" id="mrw-VO-gXa"/>
                         <outlet property="settingsTableView" destination="rji-ae-EQw" id="Trj-m1-us8"/>
                         <outlet property="volumeSlider" destination="BfX-UH-fhI" id="DFd-pw-yS2"/>

@@ -10,11 +10,12 @@ import UIKit
 import SpriteKit
 import CoreData
 
-class PongGameViewController: UIViewController, CoreDataCompliant, GameTimeCompliant {
+class PongGameViewController: UIViewController, CoreDataCompliant, GameTimeCompliant, GameApparatusCompliant {
     
     var managedObjectContext: NSManagedObjectContext!
     var inputTime: TimeInterval = GameData.circleDefaultTime
     let defaults = UserDefaults.standard
+    var inputApparatus: ApparatusType = .PlankBoard
     private var scene: PongGameScene?
     
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class PongGameViewController: UIViewController, CoreDataCompliant, GameTimeCompl
         self.scene = PongGameScene(size: view.bounds.size)
         scene?.gameOverDelegate = self
         scene?.inputTime = inputTime
+        scene?.inputApparatus = inputApparatus
         UIApplication.shared.isIdleTimerDisabled = true
         let skView = view as! SKView
         skView.showsFPS = true

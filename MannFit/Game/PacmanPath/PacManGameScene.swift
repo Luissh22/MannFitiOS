@@ -21,6 +21,7 @@ class PacManGameScene: SKScene, GameTimeCompliant {
     private var gameTimer: Timer?
     private var gameActive: Bool = true
     var inputTime: TimeInterval = GameData.pacmanDefaultTime
+    var inputApparatus: ApparatusType = .PlankBoard
     private lazy var exerciseTime: TimeInterval = {
         return inputTime
     }()
@@ -246,7 +247,14 @@ class PacManGameScene: SKScene, GameTimeCompliant {
         
         // motion update
         if let data = motionManager.accelerometerData {
-            self.smoothXAcceleration.update(newValue: data.acceleration.x)
+            var dataValue: Double = 0.0
+            switch inputApparatus {
+            case .PlankBoard:
+                dataValue = data.acceleration.x
+            case .PullUpBar:
+                dataValue = data.acceleration.y
+            }
+            self.smoothXAcceleration.update(newValue: dataValue)
             let sensitivity = 5.0 * (userDefaults.float(forKey: UserDefaultsKeys.settingsMotionSensitivityKey) / SettingsValues.sensitivityDefault)
             player.position.x = CGFloat(smoothXAcceleration.value - playerCenterX) * frame.width / 2 * CGFloat(sensitivity) + frame.width / 2
         }

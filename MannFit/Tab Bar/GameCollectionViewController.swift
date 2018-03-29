@@ -72,7 +72,7 @@ class GameCollectionViewController: UICollectionViewController {
         self.present(popup, animated: true, completion: nil)
     }
     
-    private func loadGame(game: Game, time: TimeInterval?) {
+    private func loadGame(game: Game, time: TimeInterval?, apparatusType: ApparatusType?) {
         guard let storyboard = self.storyboard else { return }
         
         var presentingViewController: UIViewController
@@ -88,6 +88,13 @@ class GameCollectionViewController: UICollectionViewController {
             guard var timedViewController = viewController as? GameTimeCompliant else { return }
             timedViewController.inputTime = time
             presentingViewController = timedViewController as! UIViewController
+        }
+        
+        // is apparatus is apart of the game, set it up
+        if let apparatus = apparatusType {
+            guard var apparatusViewController = viewController as? GameApparatusCompliant else { return }
+            apparatusViewController.inputApparatus = apparatus
+            presentingViewController = apparatusViewController as! UIViewController
         }
         
         // Hide the status bar
@@ -126,11 +133,11 @@ extension GameCollectionViewController: CoreDataCompliant { }
 // MARK: - PreGamePromptDelegate
 extension GameCollectionViewController: PreGamePromptDelegate {
     
-    func startGame(time: TimeInterval?) {
+    func startGame(time: TimeInterval?, apparatusType: ApparatusType?) {
         guard let game = self.selectedGame else { return }
         // dismiss popup view
         self.dismiss(animated: true, completion: nil)
-        self.loadGame(game: game, time: time)
+        self.loadGame(game: game, time: time, apparatusType: apparatusType)
     }
     
     func cancelGame() {

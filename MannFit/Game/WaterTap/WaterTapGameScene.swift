@@ -21,6 +21,7 @@ class WaterTapGameScene: SKScene {
     private var gameTimer: Timer?
     private var gameActive: Bool = false
     var inputTime: TimeInterval = GameData.pacmanDefaultTime
+    var inputApparatus: ApparatusType = .PlankBoard
     private lazy var exerciseTime: TimeInterval = {
         return inputTime
     }()
@@ -222,7 +223,14 @@ class WaterTapGameScene: SKScene {
         // motion update
         var absement: CGFloat = 0.0
         if let data = motionManager.accelerometerData {
-            self.smoothYAcceleration.update(newValue: data.acceleration.y)
+            var dataValue: Double = 0.0
+            switch inputApparatus {
+            case .PlankBoard:
+                dataValue = data.acceleration.x
+            case .PullUpBar:
+                dataValue = data.acceleration.y
+            }
+            self.smoothYAcceleration.update(newValue: dataValue)
             let sensitivity = userDefaults.float(forKey: UserDefaultsKeys.settingsMotionSensitivityKey) / SettingsValues.sensitivityDefault
             absement = CGFloat(smoothYAcceleration.value - playerCenterY) * 2 * CGFloat(sensitivity)
             let widthScale: CGFloat = absement > 1.0 ? 1.0 : absement

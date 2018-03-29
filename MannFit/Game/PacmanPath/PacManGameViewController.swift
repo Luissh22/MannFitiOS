@@ -10,12 +10,15 @@ import UIKit
 import SpriteKit
 import CoreData
 
-class PacManGameViewController: UIViewController, CoreDataCompliant, GameTimeCompliant {
+class PacManGameViewController: UIViewController, CoreDataCompliant, GameTimeCompliant, GameApparatusCompliant {
     
     var managedObjectContext: NSManagedObjectContext!
     var inputTime: TimeInterval = GameData.pacmanDefaultTime
+
     let defaults = UserDefaults.standard
     
+    var inputApparatus: ApparatusType = .PlankBoard
+
     private var scene: PacManGameScene?
     
     override func viewDidLoad() {
@@ -24,6 +27,7 @@ class PacManGameViewController: UIViewController, CoreDataCompliant, GameTimeCom
         self.scene = PacManGameScene(size: view.bounds.size)
         scene?.gameOverDelegate = self
         scene?.inputTime = inputTime
+        scene?.inputApparatus = inputApparatus
         UIApplication.shared.isIdleTimerDisabled = true
         let skView = view as! SKView
         skView.showsFPS = true

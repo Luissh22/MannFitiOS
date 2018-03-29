@@ -157,7 +157,7 @@ class TestingPreGamePromptView: PreGamePromptView {
     }
     
     @objc private func startGame() {
-        self.delegate?.startGame(time: nil)
+        self.delegate?.startGame(time: nil, apparatusType: nil)
     }
     
     @objc private func cancelGame() {

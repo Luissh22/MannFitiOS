@@ -11,11 +11,13 @@ struct UserDefaultsKeys {
     static let settingsMotionSensitivityKey = "settingsMotionSensitivityKey"
     static let settingsMusicKey = "settingsMusicKey"
     static let settingsVolumeKey = "settingsVolumeKey"
+    static let settingsPongSpeedKey = "settingsPongSpeedKey"
     static let filteredWorkoutKey = "filteredWorkoutKey"
 }
 
 struct SettingsValues {
     static let sensitivityDefault: Float = 0.5
+    static let pongSpeedDefault: Float = 1.0
     static let maxInputChars: Int = 3
     static let absementSampleRate: Double = 60.0
 }
