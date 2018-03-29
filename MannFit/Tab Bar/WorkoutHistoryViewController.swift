@@ -170,7 +170,6 @@ class WorkoutHistoryViewController: UITableViewController {
             let destinationVC = segue.destination as! FilterWorkoutTableViewController
             destinationVC.delegate = self
             destinationVC.storedWorkoutFilter = getStoredWorkoutFilter()
-            
         }
     }
     
@@ -178,7 +177,6 @@ class WorkoutHistoryViewController: UITableViewController {
         guard let items = fetchedResultsController.fetchedObjects else { return nil }
         
         let filteredWorkouts = items.filter { $0.game == game }
-
         
         let highScore = filteredWorkouts.min { $0.absement < $1.absement }
         guard let _highScore = highScore else { return nil }
