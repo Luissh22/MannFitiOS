@@ -179,6 +179,7 @@ class WorkoutHistoryViewController: UITableViewController {
         let filteredWorkouts = items.filter { $0.game == game }
         
         let highScore = filteredWorkouts.min { $0.absement < $1.absement }
+        
         guard let _highScore = highScore else { return nil }
         
         return String(format: "%.2f", _highScore.absement)
@@ -196,7 +197,12 @@ class WorkoutHistoryViewController: UITableViewController {
         
         let previousWorkout = filteredWorkouts[index + 1]
         
-        let workoutImprovement = -(workout.absement - previousWorkout.absement) / previousWorkout.absement
+        var workoutImprovement = -(workout.absement - previousWorkout.absement) / previousWorkout.absement
+        
+        // Special case, with floats, 0s have signs as well
+        if workoutImprovement == -0.0 {
+            workoutImprovement *= -1
+        }
         
         return String(format: "%.1f%%", workoutImprovement * 100)
     }
