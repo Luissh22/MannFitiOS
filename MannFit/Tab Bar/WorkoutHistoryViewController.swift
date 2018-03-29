@@ -173,12 +173,15 @@ class WorkoutHistoryViewController: UITableViewController {
     }
     
     private func getHighScore(for game: String) -> String? {
-        guard let workout = Workout(rawValue: game),
-            let highScoreKey = workout.highScoreKey,
-            let highScore = userDefaults.object(forKey: highScoreKey) as? Float
-        else { return nil }
+        guard let items = fetchedResultsController.fetchedObjects else { return nil }
         
-        return String(format: "%.2f", highScore)
+        let filteredWorkouts = items.filter { $0.game == game }
+
+        
+        let highScore = filteredWorkouts.min { $0.absement < $1.absement }
+        guard let _highScore = highScore else { return nil }
+        
+        return String(format: "%.2f", _highScore.absement)
     }
 }
 
@@ -201,7 +204,8 @@ extension WorkoutHistoryViewController: NSFetchedResultsControllerDelegate {
     // When a change occurs in the MOC, update the table view
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         if type == .delete {
-            self.tableView.deleteRows(at: [indexPath!], with: .fade)
+            guard let indexPath = indexPath else { return }
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     

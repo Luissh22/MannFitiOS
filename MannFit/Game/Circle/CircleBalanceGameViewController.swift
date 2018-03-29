@@ -66,7 +66,6 @@ extension CircleBalanceGameViewController: GameOverDelegate {
     }
     
     func sendGameData(game: String, duration: Int, absement: Float) {
-        self.saveHighScore(absement)
         self.prepareItem(game: game, duration: duration, absement: absement)
         self.managedObjectContext.saveChanges()
     }
@@ -78,16 +77,5 @@ extension CircleBalanceGameViewController: GameOverDelegate {
         workoutItem.absement = absement
         workoutItem.date = Date()
         workoutItem.caloriesBurned = 0 // calculate this after
-    }
-    
-    private func saveHighScore(_ absement: Float) {
-        guard let oldhighScore = defaults.object(forKey: UserDefaultsKeys.circleHighScoreKey) as? Float else {
-            defaults.set(absement, forKey: UserDefaultsKeys.circleHighScoreKey)
-            return
-        }
-        
-        if absement < oldhighScore {
-            defaults.set(absement, forKey: UserDefaultsKeys.circleHighScoreKey)
-        }
     }
 }

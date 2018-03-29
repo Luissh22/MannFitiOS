@@ -17,20 +17,3 @@ enum Workout: String {
     
     static let workouts = [All, PacMan, Circle, Water, Pong]
 }
-
-extension Workout {
-    var highScoreKey: String? {
-        switch self {
-        case .All:
-            return nil
-        case .PacMan:
-            return UserDefaultsKeys.pacmanHighScoreKey
-        case .Circle:
-            return UserDefaultsKeys.circleHighScoreKey
-        case .Water:
-            return UserDefaultsKeys.waterHighScoreKey
-        case .Pong:
-            return UserDefaultsKeys.pongHighScoreKey
-        }
-    }
-}
